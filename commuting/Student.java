@@ -38,7 +38,7 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return "이름 : " + name + " / 잔액 : " + money + " / 탑승 여부 : " + isOnBoarding;
+		return "이름 : " + getName() + " / 잔액 : " + getMoney() + " / 탑승 여부 : " + getIsOnBoarding();
 	}
 
 }
