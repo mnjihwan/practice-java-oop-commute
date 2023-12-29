@@ -4,8 +4,8 @@ public class Subway extends PublicTransport {
 
 	private String line;
 
-	public Subway(String line, int price) {
-		super(price);
+	public Subway(String line, String typeOfTransport, int price) {
+		super(typeOfTransport, price);
 		this.line = line;
 	}
 

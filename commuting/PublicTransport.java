@@ -2,11 +2,13 @@ package dev.syntax.oop.step03practice.commuting;
 
 public class PublicTransport {
 
+	private String typeOfTransport;
 	private int sales;
 	private int numberOfPassengers = 0;
 	private int price;
 
-	public PublicTransport(int price) {
+	public PublicTransport(String typeOfTransport, int price) {
+		this.typeOfTransport = typeOfTransport;
 		this.price = price;
 	}
 
@@ -33,6 +35,14 @@ public class PublicTransport {
 	public void setPrice(int price) {
 		this.price = price;
 	}
+	
+	public String getTypeOfTransport() {
+		return typeOfTransport;
+	}
+
+	public void setTypeOfTransport(String typeOfTransport) {
+		this.typeOfTransport = typeOfTransport;
+	}
 
 	public void takePassenger(Student student) {
 
@@ -41,11 +51,11 @@ public class PublicTransport {
 
 			return;
 		} else if (student.getIsOnBoarding()) {
-			System.out.println(student.getName() + "님은 이미 대중교통에 탑승중입니다.");
+			System.out.println(student.getName() + "님은 이미 " + getTypeOfTransport() + "에 탑승중입니다.");
 
 			return;
 		} else {
-			System.out.println(student.getName() + "님이 탑승하셨습니다.");
+			System.out.println(student.getName() + "님이 " + getTypeOfTransport() + "에 탑승하셨습니다.");
 
 			student.setIsOnBoarding(true);
 			student.setMoney(student.getMoney() - getPrice());
@@ -61,7 +71,7 @@ public class PublicTransport {
 			student.setIsOnBoarding(false);
 			setNumberOfPassengers(getNumberOfPassengers() - 1);
 
-			System.out.println(student.getName() + "님이 하차하셨습니다.");
+			System.out.println(student.getName() + "님이 " + getTypeOfTransport() + "에서 하차하셨습니다.");
 		} else {
 			System.out.println(student.getName() + "님은 대중교통에 탑승중이지 않습니다.");
 		}

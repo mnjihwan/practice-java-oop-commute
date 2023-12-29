@@ -4,8 +4,8 @@ public class Bus extends PublicTransport {
 
 	private String busNumber;
 
-	public Bus(String busNumber, int price) {
-		super(price);
+	public Bus(String busNumber, String typeOfTransport, int price) {
+		super(typeOfTransport, price);
 		this.busNumber = busNumber;
 	}
 
