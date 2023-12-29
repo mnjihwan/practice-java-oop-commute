@@ -1,10 +1,10 @@
 package dev.syntax.oop.step03practice.commuting;
 
-public class PublicTransport {
+public abstract class PublicTransport {
 
 	private String typeOfTransport;
 	private int sales;
-	private int numberOfPassengers = 0;
+	private int numberOfPassengers;
 	private int price;
 
 	public PublicTransport(String typeOfTransport, int price) {
@@ -35,7 +35,7 @@ public class PublicTransport {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	
+
 	public String getTypeOfTransport() {
 		return typeOfTransport;
 	}
@@ -55,12 +55,7 @@ public class PublicTransport {
 
 			return;
 		} else {
-			System.out.println(student.getName() + "님이 " + getTypeOfTransport() + "에 탑승하셨습니다.");
-
-			student.setIsOnBoarding(true);
-			student.setMoney(student.getMoney() - getPrice());
-			setSales(getSales() + getPrice());
-			setNumberOfPassengers(getNumberOfPassengers() + 1);
+			eachActionTake(student);
 		}
 
 	}
@@ -68,14 +63,15 @@ public class PublicTransport {
 	public void getOffPassenger(Student student) {
 
 		if (student.getIsOnBoarding()) {
-			student.setIsOnBoarding(false);
-			setNumberOfPassengers(getNumberOfPassengers() - 1);
-
-			System.out.println(student.getName() + "님이 " + getTypeOfTransport() + "에서 하차하셨습니다.");
+			eachActionGetOff(student);
 		} else {
 			System.out.println(student.getName() + "님은 대중교통에 탑승중이지 않습니다.");
 		}
 
 	}
+
+	public abstract void eachActionTake(Student studnet);
+	
+	public abstract void eachActionGetOff(Student studnet);
 
 }
