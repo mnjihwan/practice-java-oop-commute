@@ -4,13 +4,13 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		Student student1 = new Student("김경은", 10000);
-		Student student2 = new Student("이진천", 100000);
+		Student student1 = new Student("김경은", 10_000);
+		Student student2 = new Student("이진천", 100_000);
 		Student student3 = new Student("김남혁", 1_000_000_000);
-		Student student4 = new Student("문지환", 1000);
+		Student student4 = new Student("문지환", 1_000);
 
-		Bus bus = new Bus("271", "버스", 1200);
-		Subway subway = new Subway("2", "지하철", 1500);
+		Bus bus = new Bus("271", "버스", 1_200);
+		Subway subway = new Subway("2", "지하철", 1_500);
 
 		bus.takePassenger(student1);
 		bus.takePassenger(student2);

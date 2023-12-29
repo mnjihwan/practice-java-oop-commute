@@ -23,7 +23,7 @@ public class Subway extends PublicTransport {
 	}
 
 	@Override
-	public void eachActionTake(Student student) {
+	public void takeAction(Student student) {
 //		개별로 작동될 부분
 		System.out.println(student.getName() + "님이 " + getTypeOfTransport() + "에 탑승하셨습니다.");
 
@@ -35,7 +35,7 @@ public class Subway extends PublicTransport {
 	}
 
 	@Override
-	public void eachActionGetOff(Student student) {
+	public void getOffAction(Student student) {
 //		개별로 작동될 부분
 		student.setIsOnBoarding(false);
 		setNumberOfPassengers(getNumberOfPassengers() - 1);

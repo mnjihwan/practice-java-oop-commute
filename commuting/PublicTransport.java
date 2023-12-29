@@ -55,7 +55,7 @@ public abstract class PublicTransport {
 
 			return;
 		} else {
-			eachActionTake(student);
+			takeAction(student);
 		}
 
 	}
@@ -63,15 +63,15 @@ public abstract class PublicTransport {
 	public void getOffPassenger(Student student) {
 
 		if (student.getIsOnBoarding()) {
-			eachActionGetOff(student);
+			getOffAction(student);
 		} else {
 			System.out.println(student.getName() + "님은 대중교통에 탑승중이지 않습니다.");
 		}
 
 	}
 
-	public abstract void eachActionTake(Student studnet);
-	
-	public abstract void eachActionGetOff(Student studnet);
+	public abstract void takeAction(Student studnet);
+
+	public abstract void getOffAction(Student studnet);
 
 }
